@@ -1,0 +1,19 @@
+
+<div class="container">
+    <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+
+    <div class="container">
+        <form (ngSubmit)="handleLogin()" #userForm="ngForm">
+            <fieldset class="form-group">
+                <label>Username</label>
+                <input type="text" #description="ngModel" [(ngModel)]="userlogin.username" class="form-control" name="username" required="required">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Password</label>
+                <input type="password" #description="ngModel" [(ngModel)]="userlogin.password" class="form-control" name="password" required="required">
+            </fieldset>
+            <button type="submit" class="btn btn-success">Login</button>
+        </form>
+    </div>
+</div>

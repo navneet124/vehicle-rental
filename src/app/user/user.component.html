@@ -1,0 +1,65 @@
+<h1>Vehicle List</h1>
+
+ <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Vehicle Id</th>
+                <th>Vehicle Name</th>
+                <th>Rent Per Day</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vehicle of vehicles">
+                <td>{{vehicle.vehicleId}}</td>
+                <td>{{vehicle.vehicleName}}</td>
+                <td>{{vehicle.rentPerday}}</td>
+            </tr>
+        </tbody>
+    </table>
+<div class="container">
+    <h3>Enter Details to Book a Vehicle</h3>
+    <hr>
+    <div class="row">
+        
+        <form (ngSubmit)="bookVehicle()" #userForm="ngForm">
+            <fieldset class="form-group">
+                <label>Enter Vehicle Id</label>
+                <input type="number" #description="ngModel" [(ngModel)]="bookingDetail.vehicleId" class="form-control" name="vehicleId" required="required">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Enter No of Days</label>
+                <input type="number" #description="ngModel" [(ngModel)]="bookingDetail.noOfDays" class="form-control" name="noOfDays" required="required">
+            </fieldset>
+
+            <button type="submit" class="btn btn-success">Book Vehicle</button>
+        </form>
+    </div>
+    <br>
+    <h3>Enter Details below to Pay for booked Vehicle</h3>
+    <hr>
+    <div class="row">
+
+        <form (ngSubmit)="payRent()" #userForm="ngForm">
+            <fieldset class="form-group">
+                <label>Enter Booking Id</label>
+                <input type="number" #description="ngModel" [(ngModel)]="bookingDetail.bookingId" class="form-control" name="bookingId" required="required">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Enter Total Amount</label>
+                <input type="number" #description="ngModel" [(ngModel)]="bookingDetail.totalAmount" class="form-control" name="totalAmount" required="required">
+            </fieldset>
+
+            <button type="submit" class="btn btn-success">Pay Rent</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    </div>
+
+
+</div>

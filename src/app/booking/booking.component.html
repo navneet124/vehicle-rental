@@ -1,0 +1,28 @@
+<h1>Vehicle Booking list</h1>
+
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Booking Id</th>
+                <th>Username</th>
+                <th>Vehicle Id</th>
+                <th>No of Days</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let booking of bookingdetails">
+                <td>{{booking.bookingId}}</td>
+                <td>{{booking.username}}</td>
+                <td>{{booking.vehicleId}}</td>
+                <td>{{booking.noOfDays}}</td>
+                <td>{{booking.totalAmount}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+</div>

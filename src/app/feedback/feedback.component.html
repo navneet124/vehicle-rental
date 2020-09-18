@@ -1,0 +1,15 @@
+<H3>Give your Valuable Feedback Here!</H3>
+
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+
+        <form (ngSubmit)="giveFeedback()" #userForm="ngForm">
+            <fieldset class="form-group">
+                <label>Enter your feedback</label>
+                <input type="text" #description="ngModel" [(ngModel)]="feedback.feedback" class="form-control" name="feedback" required="required">
+            </fieldset>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+</div>

@@ -1,0 +1,36 @@
+<h1>Vendor Details</h1>
+
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Vendor Name</th>
+                <th>Address</th>
+                <th>Phone no</th>
+                <th>Username</th>
+                <!-- <th>Password</th> -->
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vendor of vendors">
+                <td>{{vendor.vendorName}}</td>
+                <td>{{vendor.address}}</td>
+                <td>{{vendor.phone}}</td>
+                <td>{{vendor.username}}</td>
+                <!-- <td>{{vendor.Password}}</td> -->
+                <td><button (click)="updateVendor(vendor.vendorId)" class="btn btn-success">Update</button></td>
+                <td><button (click)="deleteVendor(vendor.vendorId)" class="btn btn-warning">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <td><button (click)="addVendor()" class="btn btn-success">Add Vendor</button></td>
+    </div>
+    <br>
+    <br>
+</div>
+

@@ -1,0 +1,23 @@
+<h2>Add New Vehicle</h2>
+<div class="container">
+
+    <form (ngSubmit)="addVehicle()" #userForm="ngForm">
+        <fieldset class="form-group">
+            <label>Enter Vehicle Name</label>
+            <input type="text" #description="ngModel" [(ngModel)]="vehicle.vehicleName" class="form-control" name="vehicleName" required="required">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>Enter Rent per Day</label>
+            <input type="number" #description="ngModel" [(ngModel)]="vehicle.rentPerday" class="form-control" name="rentPerday" required="required">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>Enter booking Status</label>
+            <input type="text" #description="ngModel" [(ngModel)]="vehicle.isBooked" class="form-control" name="Booked" required="required">
+        </fieldset>
+
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</div>
+
